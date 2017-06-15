@@ -1,6 +1,7 @@
-FROM buildpack-deps:jessie
+FROM ligo/base:el7
 
-RUN apt-get update && \
-    apt-get install --assume-yes \
+RUN yum -y groupinstall 'Development Tools' && \
+    yum install -y \
       ccache \
-      clang
+      clang && \
+    yum clean all
