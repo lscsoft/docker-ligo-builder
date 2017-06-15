@@ -1,6 +1,7 @@
-FROM buildpack-deps:jessie
+FROM buildpack-deps:stretch
 
 RUN apt-get update && \
     apt-get install --assume-yes \
       ccache \
-      clang
+      clang && \
+    rm -rf /var/lib/apt/lists/*
