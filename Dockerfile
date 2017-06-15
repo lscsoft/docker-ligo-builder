@@ -1,6 +1,8 @@
-FROM buildpack-deps:jessie
+FROM debian:jessie
 
 RUN apt-get update && \
     apt-get install --assume-yes \
+      build-essential \
       ccache \
-      clang
+      clang && \
+    rm -rf /var/lib/apt/lists/*
