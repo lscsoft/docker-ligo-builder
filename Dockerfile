@@ -1,8 +1,10 @@
 FROM debian:stretch
 
-RUN apt-get update && \
-    apt-get install --assume-yes \
+RUN apt-get update \
+    && apt-get install --assume-yes \
       build-essential \
       ccache \
-      clang && \
-    rm -rf /var/lib/apt/lists/*
+      clang \
+      curl \
+      wget \
+    && rm -rf /var/lib/apt/lists/*
