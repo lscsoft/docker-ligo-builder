@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ligo/base:jessie
 
 RUN apt-get update \
     && apt-get install --assume-yes \
